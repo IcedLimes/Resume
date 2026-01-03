@@ -3,45 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accomplishment</title>
+    <title>Jason Zeng - Accomplishments</title>
     <style>
-        body {
-            font-family: Monospace;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #c1c1c1;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+            min-height: 100vh;
         }
         header {
-            background-color: #1b1b1b;
+            background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
             color: #fff;
-            padding: 1rem 0;
+            padding: 2.5rem 2rem;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
         }
         nav a {
-            color: #fff;
-            padding: 1rem;
+            color: #4a5568;
+            padding: 1.25rem 1.75rem;
             text-decoration: none;
             display: block;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
         }
         nav a:hover {
-            background-color: #555;
+            color: #2b6cb0;
+            background-color: #f7fafc;
+            border-bottom-color: #2b6cb0;
+        }
+        nav a.active {
+            color: #2b6cb0;
+            border-bottom-color: #2b6cb0;
         }
         .container {
-            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: calc(100vh - 250px);
+        }
+        .section {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: #2c5282;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1.125rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #4a5568;
+            font-size: 1.0625rem;
+        }
+        ul li:before {
+            content: "•";
+            color: #2b6cb0;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         footer {
             text-align: center;
-            padding: 1rem 0;
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 2rem;
+            background-color: #2d3748;
+            color: #cbd5e0;
+            margin-top: auto;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            nav a {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            .section {
+                padding: 2rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -52,7 +147,7 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="about_me.html">About Me</a>
-        <a href="accomplishment.html">Accomplishments</a>
+        <a href="accomplishment.html" class="active">Accomplishments</a>
         <a href="contact.html">Contact</a>
         <a href="project.html">Projects</a>
     </nav>
@@ -63,52 +158,58 @@
             August 2023 - May 2027 (expected graduation)<br>
             152/180 days through Freshman Year</p>
         </div>
-        <div class="section">
-            <h2>Skills</h2>
-            <ul class="skills">
-                <li>Critical Thinking</li>
-                <li>Work Efficiency</li>
-                <li>Multi-Tasking</li>
-                <li>Organizing</li>
-                <li>Bilingual with Chinese and English</li>
-            </ul>
+
+        <div class="grid-2">
+            <div class="section">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Critical Thinking</li>
+                    <li>Work Efficiency</li>
+                    <li>Multi-Tasking</li>
+                    <li>Organizing</li>
+                    <li>Bilingual (Chinese & English)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Hobbies</h2>
+                <ul>
+                    <li>3D Modeling</li>
+                    <li>Programming</li>
+                    <li>Chess</li>
+                    <li>Archery</li>
+                    <li>Baking</li>
+                    <li>Animation</li>
+                    <li>Swimming</li>
+                    <li>Badminton</li>
+                </ul>
+            </div>
         </div>
+
         <div class="section">
             <h2>Work Experience</h2>
             <p><strong>Lawn Mowing Business</strong><br>
             September 2021 - March 2023</p>
-            <ul class="work-experience">
+            <ul>
                 <li>Managed Money and Investing</li>
                 <li>Manual Labor</li>
                 <li>Advertising</li>
             </ul>
         </div>
+
         <div class="section">
             <h2>Volunteer Experience</h2>
             <p><strong>Book Club</strong><br>
             Dublin • August 2023 – December 2023</p>
-            <ul class="volunteer-experience">
+            <ul>
                 <li>Managed Teams</li>
                 <li>Participated and encouraged conversations</li>
                 <li>Decided on books</li>
             </ul>
         </div>
-        <div class="section">
-            <h2>Hobbies</h2>
-            <ul class="hobbies">
-                <li>3D Modeling</li>
-                <li>Programming</li>
-                <li>Chess</li>
-                <li>Archery</li>
-                <li>Baking</li>
-                <li>Animation</li>
-                <li>Swimming</li>
-                <li>Badminton</li>
-            </ul>
-        </div>
     </div>
     <footer>
-        <p>&copy; 2024 jasonzeng2009@gmail.com</p>
+        <p>&copy; 2024 Jason Zeng | jasonzeng2009@gmail.com</p>
     </footer>
 </body>
 </html>

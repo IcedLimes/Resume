@@ -3,45 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Jason Zeng - Contact</title>
     <style>
-        body {
-            font-family: Monospace;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #c1c1c1;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+            min-height: 100vh;
         }
         header {
-            background-color: #1b1b1b;
+            background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
             color: #fff;
-            padding: 1rem 0;
+            padding: 2.5rem 2rem;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
         }
         nav a {
-            color: #fff;
-            padding: 1rem;
+            color: #4a5568;
+            padding: 1.25rem 1.75rem;
             text-decoration: none;
             display: block;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
         }
         nav a:hover {
-            background-color: #555;
+            color: #2b6cb0;
+            background-color: #f7fafc;
+            border-bottom-color: #2b6cb0;
+        }
+        nav a.active {
+            color: #2b6cb0;
+            border-bottom-color: #2b6cb0;
         }
         .container {
-            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: calc(100vh - 250px);
+        }
+        section {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+        h2 {
+            color: #2c5282;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 8px;
+            border-left: 4px solid #2b6cb0;
+            transition: transform 0.2s ease;
+        }
+        .contact-item:hover {
+            transform: translateX(8px);
+        }
+        .contact-label {
+            font-weight: 600;
+            color: #2c5282;
+            min-width: 120px;
+            font-size: 1.125rem;
+        }
+        .contact-value {
+            color: #4a5568;
+            font-size: 1.125rem;
+        }
+        .contact-value a {
+            color: #2b6cb0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-value a:hover {
+            color: #2c5282;
+            text-decoration: underline;
         }
         footer {
             text-align: center;
-            padding: 1rem 0;
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 2rem;
+            background-color: #2d3748;
+            color: #cbd5e0;
+            margin-top: auto;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            nav a {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            section {
+                padding: 2rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-label {
+                min-width: auto;
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -53,18 +151,26 @@
         <a href="index.html">Home</a>
         <a href="about_me.html">About Me</a>
         <a href="accomplishment.html">Accomplishments</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
         <a href="project.html">Projects</a>
     </nav>
     <div class="container">
         <section id="contact">
-            <h2>Contact Information</h2>
-            <p>Email: <a href="jasonzeng2009@gmail.com">jasonzeng2009@gmail.com</a>.</p>
-            <br>Phone Number: 925-549-9041
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">Email:</span>
+                    <span class="contact-value"><a href="mailto:jasonzeng2009@gmail.com">jasonzeng2009@gmail.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Phone:</span>
+                    <span class="contact-value">925-549-9041</span>
+                </div>
+            </div>
         </section>
     </div>
     <footer>
-        <p>&copy; 2024 jasonzeng2009@gmail.com</p>
+        <p>&copy; 2024 Jason Zeng | jasonzeng2009@gmail.com</p>
     </footer>
 </body>
 </html>
