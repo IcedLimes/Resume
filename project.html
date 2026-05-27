@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Zeng - Projects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+            min-height: 100vh;
+            padding-bottom: 3rem;
+        }
+        header {
+            background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
+            color: #fff;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #4a5568;
+            padding: 1.25rem 1.75rem;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        nav a:hover {
+            color: #2b6cb0;
+            background-color: #f7fafc;
+            border-bottom-color: #2b6cb0;
+        }
+        nav a.active {
+            color: #2b6cb0;
+            border-bottom-color: #2b6cb0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .project-section {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            margin-bottom: 3rem;
+        }
+        h1 {
+            color: #2c5282;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .input-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .input-box label {
+            font-weight: 500;
+            color: #4a5568;
+        }
+        .input-box input,
+        .input-box select {
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .input-box input:focus,
+        .input-box select:focus {
+            outline: none;
+            border-color: #2b6cb0;
+        }
+        .input-box input[type="number"] {
+            width: 100px;
+        }
+        .input-box button {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .input-box button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(43, 108, 176, 0.4);
+        }
+        .input-box button:active {
+            transform: translateY(0);
+        }
+        .result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-left: 4px solid #2b6cb0;
+            border-radius: 6px;
+            font-size: 1.125rem;
+            color: #2c5282;
+            font-weight: 600;
+            min-height: 3rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #2d3748;
+            color: #cbd5e0;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            nav a {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            .project-section {
+                padding: 2rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+            .input-box {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .input-box input,
+            .input-box select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Projects</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about_me.html">About Me</a>
+        <a href="accomplishment.html">Accomplishments</a>
+        <a href="contact.html">Contact</a>
+        <a href="project.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+    </nav>
+
+    <div class="container">
+        <div class="project-section">
+            <h1>RGB to HEX Converter</h1>
+            <div class="input-box">
+                <label for="red">Red:</label>
+                <input type="number" id="red" name="red" min="0" max="255">
+                <label for="green">Green:</label>
+                <input type="number" id="green" name="green" min="0" max="255">
+                <label for="blue">Blue:</label>
+                <input type="number" id="blue" name="blue" min="0" max="255">
+                <button onclick="convertRGBtoHex()">Convert to Hex</button>
+            </div>
+            <div class="result" id="result">Result will appear here</div>
+        </div>
+
+    <script>
+        function convertRGBtoHex() {
+            let R = parseInt(document.getElementById('red').value);
+            let G = parseInt(document.getElementById('green').value);
+            let B = parseInt(document.getElementById('blue').value);
+
+            function RGBtoHex(r, g, b) {
+                r = Math.max(0, Math.min(255, r));
+                g = Math.max(0, Math.min(255, g));
+                b = Math.max(0, Math.min(255, b));
+
+                return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+            }
+
+            let hexValue = RGBtoHex(R, G, B);
+            document.getElementById('result').innerText = "HEX: " + hexValue;
+        }
+    </script>
+
+        <div class="project-section">
+            <h1>Restaurant Menu Order</h1>
+            <div class="input-box">
+                <label for="item">Choose an item:</label>
+                <select id="item" name="item">
+                    <option value="sandwich">Sandwich</option>
+                    <option value="drink">Drink</option>
+                    <option value="fries">Fries</option>
+                </select>
+                <button onclick="addItem()">Add Item</button>
+            </div>
+            <div class="result" id="orderResult">Select an item to begin your order</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jason Zeng | jasonzeng2009@gmail.com</p>
+    </footer>
+
+    <script>
+        const sandwichOptions = {
+            "1": ["Beef Sandwich", 6.25],
+            "2": ["Chicken Sandwich", 5.75],
+            "3": ["Tofu Sandwich", 5.75],
+            "4": ["No Sandwich", 0.00]
+        };
+
+        const drinkOptions = {
+            "1": ["Small Drink", 1.00],
+            "2": ["Medium Drink", 1.75],
+            "3": ["Large Drink", 2.25],
+            "4": ["No Drink", 0.00]
+        };
+
+        const friesOptions = {
+            "1": ["Small Fries", 1.00],
+            "2": ["Medium Fries", 1.75],
+            "3": ["Large Fries", 2.00],
+            "4": ["No Fries", 0.00]
+        };
+
+        let orderDetails = {
+            sandwich: {},
+            drink: {},
+            fries: {},
+            total: 0.00,
+            ketchup: 0
+        };
+
+        function getOptionsHtml(options) {
+            return Object.keys(options).map(key => `
+                <option value="${key}">${options[key][0]} - $${options[key][1].toFixed(2)}</option>
+            `).join('');
+        }
+
+        function addItem() {
+            const itemType = document.getElementById('item').value;
+            let options, itemLabel;
+            switch (itemType) {
+                case 'sandwich':
+                    options = sandwichOptions;
+                    itemLabel = 'Sandwich';
+                    break;
+                case 'drink':
+                    options = drinkOptions;
+                    itemLabel = 'Drink';
+                    break;
+                case 'fries':
+                    options = friesOptions;
+                    itemLabel = 'Fries';
+                    break;
+                default:
+                    return;
+            }
+
+            const orderBoxHtml = `
+                <div class="input-box">
+                    <label for="itemSelection">${itemLabel}:</label>
+                    <select id="itemSelection">${getOptionsHtml(options)}</select>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="0">
+                    <button onclick="confirmItem('${itemType}')">Confirm</button>
+                </div>
+            `;
+
+            document.getElementById('orderResult').innerHTML = orderBoxHtml;
+        }
+
+        function confirmItem(itemType) {
+            const itemSelection = document.getElementById('itemSelection').value;
+            const quantity = parseInt(document.getElementById('quantity').value);
+            let options, itemLabel;
+
+            switch (itemType) {
+                case 'sandwich':
+                    options = sandwichOptions;
+                    itemLabel = 'Sandwich';
+                    break;
+                case 'drink':
+                    options = drinkOptions;
+                    itemLabel = 'Drink';
+                    break;
+                case 'fries':
+                    options = friesOptions;
+                    itemLabel = 'Fries';
+                    break;
+                default:
+                    return;
+            }
+
+            if (!options[itemSelection] || isNaN(quantity) || quantity <= 0) {
+                alert('Invalid selection or quantity.');
+                return;
+            }
+
+            const itemName = options[itemSelection][0];
+            const itemPrice = options[itemSelection][1] * quantity;
+
+            orderDetails[itemType][itemName] = (orderDetails[itemType][itemName] || 0) + quantity;
+            orderDetails.total += itemPrice;
+
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const orderSummaryHtml = `
+                <h2>Order Summary</h2>
+                <ul>
+                    ${Object.keys(orderDetails).map(itemType => {
+                        if (itemType === 'total' || itemType === 'ketchup') return '';
+                        return Object.keys(orderDetails[itemType]).map(itemName => `
+                            <li>${itemName}: x${orderDetails[itemType][itemName]}</li>
+                        `).join('');
+                    }).join('')}
+                    <li>Total Price: $${orderDetails.total.toFixed(2)}</li>
+                </ul>
+            `;
+
+            document.getElementById('orderResult').innerHTML = orderSummaryHtml;
+        }
+    </script>
+</body>
+</html>
